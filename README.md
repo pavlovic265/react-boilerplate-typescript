@@ -54,6 +54,7 @@
 # Note
 
 This projects is forked from [react-boilerplate-typescript](https://github.com/Can-Sahin/react-boilerplate-typescript).
+
 Difference:
 
 - Update dependecies and fix issues with new dependecies
