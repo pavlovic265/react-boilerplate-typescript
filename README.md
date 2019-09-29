@@ -53,7 +53,12 @@
 
 # Note
 
-This projects is cloned from [react-boilerplate-typescript](https://github.com/Can-Sahin/react-boilerplate-typescript). The only difference is that the dependecies are updated.
+This projects is forked from [react-boilerplate-typescript](https://github.com/Can-Sahin/react-boilerplate-typescript).
+Difference:
+
+- Update dependecies and fix issues with new dependecies
+- Update `ToggleOption` component
+- Update `LanguageProvider` component
 
 # Typescript
 
