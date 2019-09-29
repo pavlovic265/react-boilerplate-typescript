@@ -17,6 +17,7 @@ describe('<NotFound />', () => {
         <NotFound />
       </IntlProvider>,
     );
-    expect(queryByText(messages.header.defaultMessage)).toBeInTheDocument();
+    const queryText = messages.header.defaultMessage || '';
+    expect(queryByText(queryText)).toBeInTheDocument();
   });
 });

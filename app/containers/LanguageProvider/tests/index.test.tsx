@@ -13,7 +13,7 @@ const messages = defineMessages({
   someMessage: {
     id: 'some.id',
     defaultMessage: 'This is some default message',
-    en: 'This is some en message',
+    description: 'This is some en message',
   },
 });
 
@@ -27,12 +27,11 @@ describe('<LanguageProvider />', () => {
   it('should render its children', () => {
     const text = 'Test';
     const children = <h1>{text}</h1>;
+
     const { queryByText } = render(
       // tslint:disable-next-line: jsx-wrap-multiline
       <Provider store={store}>
-        <LanguageProvider messages={messages}>
-          {children}
-        </LanguageProvider>
+        <LanguageProvider messages={messages}>{children}</LanguageProvider>
       </Provider>,
     );
     expect(queryByText(text)).toBeInTheDocument();
@@ -47,8 +46,12 @@ describe('<LanguageProvider />', () => {
         </LanguageProvider>
       </Provider>,
     );
-    expect(
-      queryByText(messages.someMessage.defaultMessage),
-    ).toBeInTheDocument();
+    const queryText =
+      (messages &&
+        messages.someMessage &&
+        messages.someMessage.defaultMessage) ||
+      '';
+
+    expect(queryByText(queryText)).toBeInTheDocument();
   });
 });

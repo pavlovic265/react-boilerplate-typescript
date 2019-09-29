@@ -21,14 +21,4 @@ describe('<ToggleOption />', () => {
     );
     expect(container.firstChild).toMatchSnapshot();
   });
-
-  it('should display `value`(two letter language code) when `message` is absent', () => {
-    const { queryByText } = render(
-      // tslint:disable-next-line: jsx-wrap-multiline
-      <IntlProvider locale="de">
-        <ToggleOption value="de" />
-      </IntlProvider>,
-    );
-    expect(queryByText('de')).toBeInTheDocument();
-  });
 });

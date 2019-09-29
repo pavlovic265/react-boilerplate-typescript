@@ -19,17 +19,13 @@ exports[`<Header /> should render a div 1`] = `
       class="sc-ifAKCX cIlifk"
       href="/"
     >
-      <span>
-        Home
-      </span>
+      Home
     </a>
     <a
       class="sc-ifAKCX cIlifk"
       href="/features"
     >
-      <span>
-        Features
-      </span>
+      Features
     </a>
   </div>
 </div>

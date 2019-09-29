@@ -7,6 +7,17 @@
 
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
+if (!Intl.PluralRules) {
+  require('@formatjs/intl-pluralrules/polyfill');
+  require('@formatjs/intl-pluralrules/dist/locale-data/en'); // Add locale data for de
+  require('@formatjs/intl-pluralrules/dist/locale-data/de'); // Add locale data for de
+}
+
+// By default, this library comes with en data.
+if (!Intl['RelativeTimeFormat']) {
+  require('@formatjs/intl-relativetimeformat/polyfill');
+  require('@formatjs/intl-relativetimeformat/dist/locale-data/de'); // Add locale data for de
+}
 
 // Import all the third party stuff
 import * as React from 'react';
@@ -15,7 +26,9 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import FontFaceObserver from 'fontfaceobserver';
 import history from 'utils/history';
-import 'sanitize.css/sanitize.css';
+import 'sanitize.css';
+import 'sanitize.css/forms.css';
+import 'sanitize.css/typography.css';
 
 // Import root app
 import App from 'containers/App';

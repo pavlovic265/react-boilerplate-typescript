@@ -51,6 +51,10 @@
 
 ---
 
+# Note
+
+This projects is cloned from [react-boilerplate-typescript](https://github.com/Can-Sahin/react-boilerplate-typescript). The only difference is that the dependecies are updated.
+
 # Typescript
 
 This fork is the **fully-featured** typescript implementation of [react-boilerplate](https://github.com/react-boilerplate/react-boilerplate) with extra features and powers of `Typescript`

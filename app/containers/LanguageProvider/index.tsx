@@ -14,7 +14,7 @@ import { IntlProvider } from 'react-intl';
 import { makeSelectLocale } from './selectors';
 
 export interface Props {
-  messages: { [locale: string]: { [id: string]: string } };
+  messages: { [locale: string]: { [id: string]: string | any } };
   children?: React.ReactNode;
 }
 
@@ -25,16 +25,12 @@ const stateSelector = createSelector(
   }),
 );
 
-export default function LanguageProvider(props: Props) {
+export default function LanguageProvider({ messages, children }: Props) {
   const { locale } = useSelector(stateSelector);
 
   return (
-    <IntlProvider
-      locale={locale}
-      key={locale}
-      messages={props.messages[locale]}
-    >
-      {React.Children.only(props.children)}
+    <IntlProvider locale={locale} key={locale} messages={messages[locale]}>
+      {React.Children.only(children)}
     </IntlProvider>
   );
 }
